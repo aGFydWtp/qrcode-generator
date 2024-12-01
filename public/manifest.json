@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "QR Code Generator",
+  "short_name": "QR Code Generator",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A QR Code Generator."
+}

@@ -1,0 +1,52 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "qrcode-generator-app",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+	"customizations": {
+    "vscode": {
+      "settings": {
+        "material-icon-theme.activeIconPack": "qwik",
+        "emmet.includeLanguages": {
+          "typescriptreact": "html"
+        },
+        "emmet.preferences": {
+          // to ensure closing tags are used (e.g. <img/> not just <img> like in HTML)
+          // https://github.com/microsoft/vscode/commit/083bf9020407ea5a91199eb1f0b373859df8d600#diff-88456bc9b7caa2f8126aea0107b4671db0f094961aaf39a7c689f890e23aaaba
+          "output.selfClosingStyle": "xhtml"
+        },
+        "prettier.prettierPath": "/workspace/node_modules/prettier"
+      },
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "ms-vscode.vscode-typescript-next",
+        "yoavbls.pretty-ts-errors",
+        "meganrogge.template-string-converter",
+        "formulahendry.auto-rename-tag",
+        "wmaurer.change-case",
+        "kisstkondoros.vscode-codemetrics",
+        "vincaslt.highlight-matching-tag",
+        "mosapride.zenkaku",
+        "ecmel.vscode-html-css",
+        "christian-kohler.npm-intellisense",
+        "eamodio.gitlens",
+        "mechatroner.rainbow-csv"
+      ]
+    }
+  }
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

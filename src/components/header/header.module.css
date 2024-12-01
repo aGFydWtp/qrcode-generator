@@ -1,0 +1,16 @@
+header {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  padding-top: 3rem;
+}
+
+.highlight {
+  color: var(--qwik-light-blue);
+}
+
+@media (max-width: 768px) {
+  header {
+    font-size: 2rem;
+  }
+}
