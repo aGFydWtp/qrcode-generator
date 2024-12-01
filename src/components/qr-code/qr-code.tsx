@@ -10,11 +10,17 @@ export default component$(() => {
   const size = useSignal<'medium' | 'large'>('medium');
 
   // create mobile flag
-  const isMobile = useSignal(false);
+  const isMobile = useSignal<boolean | null>(null);
 
   // update mobile flag on window resize
   useOnWindow(
     'resize',
+    $(() => {
+      isMobile.value = window.innerWidth < 768;
+    })
+  );
+  useOnWindow(
+    'load',
     $(() => {
       isMobile.value = window.innerWidth < 768;
     })
@@ -50,6 +56,10 @@ export default component$(() => {
     element.click();
     document.body.removeChild(element);
   });
+
+  if (isMobile.value === null) {
+    return null;
+  }
 
   return (
     <div class={styles.qrContainer}>
@@ -100,7 +110,6 @@ export default component$(() => {
           </select>
         )}
       </div>
-
       <div class={styles.qrCode}>
         {format.value === 'svg' ? (
             <div dangerouslySetInnerHTML={qrCode.value} />
